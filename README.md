@@ -19,6 +19,7 @@ PORT=5001
 MONGO_URI=your_mongo_uri
 JWT_SECRET_KEY=your_jwt_secret
 NODE_ENV=development
+
 ```
 
 ### Frontend (`/frontend`)
