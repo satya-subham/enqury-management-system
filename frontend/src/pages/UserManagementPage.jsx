@@ -77,6 +77,7 @@ function UserManagement() {
           <button className="bg-blue-600 text-white px-4 py-2 rounded mb-4">
             Add New User
           </button>
+          <NavLin to="/"><button type="button" className="bg-green-600 text-white px-4 py-2 rounded">ENQUREY</button></NavLin>
         </Dialog.Trigger>
         <Dialog.Portal>
           {/* Dark background */}
