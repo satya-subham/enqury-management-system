@@ -71,6 +71,7 @@ function UserManagement() {
   return (
     <div className="p-4 max-w-6xl mx-auto">
       <h1 className="text-3xl font-bold mb-6 text-white">USER MANAGEMENT</h1>
+      <NavLink to="/"><button type="button" className="bg-green-600 text-white px-4 py-2 rounded">ENQUREY</button></NavLink>
 
       {/* Add User Form */}
       <Dialog.Root>
@@ -78,7 +79,6 @@ function UserManagement() {
           <button className="bg-blue-600 text-white px-4 py-2 rounded mb-4">
             Add New User
           </button>
-          <NavLink to="/"><button type="button" className="bg-green-600 text-white px-4 py-2 rounded">ENQUREY</button></NavLink>
         </Dialog.Trigger>
         <Dialog.Portal>
           {/* Dark background */}
