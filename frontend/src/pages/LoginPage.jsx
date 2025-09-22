@@ -4,10 +4,11 @@ import { AuthContext } from '../context/AuthContext';
 import * as Dialog from '@radix-ui/react-dialog';
 import { axiosInstance } from '../lib/axios';
 import { toast } from 'react-toastify';
-import { Navigate } from 'react-router-dom';
+import { Navigate, NavLink, useNavigate } from 'react-router-dom';
 
 function Login() {
   const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -19,7 +20,7 @@ function Login() {
       return;
     }
     toast.success('Login successful');
-    return <Navigate to="/" />
+    return navigate('/');
   };
 
   return (
@@ -31,6 +32,7 @@ function Login() {
             <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} className="w-full p-2 border rounded" required />
             <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} className="w-full p-2 border rounded" required />
             <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">LOGIN</button>
+            <NavLink to="/register" className="bg-blue-600 text-white px-4 py-2 rounded"><button type="button" >REGISTER</button></NavLink>
           </form>
         </Dialog.Content>
       </Dialog.Root>

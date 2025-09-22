@@ -5,6 +5,7 @@ import { Tabs } from "@radix-ui/react-tabs";
 import EnquiryForm from "./EnquryForm";
 import NavBar from "./NavBar";
 import { AuthContext } from "../context/AuthContext";
+import { NavLink } from 'react-router-dom'
 
 function Dashboard({ onSuccess, enquiries }) {
   const [statusFilter, setStatusFilter] = useState("All");
@@ -46,6 +47,9 @@ function Dashboard({ onSuccess, enquiries }) {
       />
 
       <EnquiryForm onSuccess={onSuccess}/>
+      <NavLink to="/users">
+        {user?.role !== "user" && <button className="bg-blue-600 text-white px-4 py-2 rounded mb-4 mt-4">User Management</button>}
+      </NavLink>
       <EnquiryList enquiries={filteredProduct} refresh={onSuccess} statusFilter={statusFilter} setStatusFilter={setStatusFilter} searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
     </div>
   );

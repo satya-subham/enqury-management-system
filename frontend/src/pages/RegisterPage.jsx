@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import * as Dialog from '@radix-ui/react-dialog';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 
 function Register() {
   const navigate = useNavigate();
@@ -23,6 +23,7 @@ function Register() {
             <input type="email" placeholder="Email" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} className="w-full p-2 border rounded" required />
             <input type="password" placeholder="Password" value={formData.password} onChange={e => setFormData({...formData, password: e.target.value})} className="w-full p-2 border rounded" required />
             <button type="submit" className="bg-green-600 text-white px-4 py-2 rounded">CREATE</button>
+            <NavLink to="/login" className="bg-blue-600 text-white px-4 py-2 rounded"><button type="button" >LOGIN</button></NavLink>
           </form>
         </Dialog.Content>
       </Dialog.Root>
