@@ -4,6 +4,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { toast } from "react-toastify";
 import { axiosInstance } from "../lib/axios";
 import { UserX } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 function UserManagement() {
   const [users, setUsers] = useState([]);
@@ -77,7 +78,7 @@ function UserManagement() {
           <button className="bg-blue-600 text-white px-4 py-2 rounded mb-4">
             Add New User
           </button>
-          <NavLin to="/"><button type="button" className="bg-green-600 text-white px-4 py-2 rounded">ENQUREY</button></NavLin>
+          <NavLink to="/"><button type="button" className="bg-green-600 text-white px-4 py-2 rounded">ENQUREY</button></NavLink>
         </Dialog.Trigger>
         <Dialog.Portal>
           {/* Dark background */}
